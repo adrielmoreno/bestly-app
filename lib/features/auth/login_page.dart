@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -141,7 +142,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
-                    if (Platform.isIOS)
+                    if (!kIsWeb && Platform.isIOS)
                       SizedBox(
                         width: double.infinity,
                         child: FilledButton.icon(
