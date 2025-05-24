@@ -1,0 +1,18 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "always",
+        "source.organizeImports": "always",
+    },
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "cSpell.words": [
+        "bestly",
+        "Fitnessysalud"
+    ],
+    "command-runner.commands": {
+        "build_runner": "flutter pub run build_runner build",
+        "pub_get": "flutter pub get",
+        "clean": "flutter clean",
+        "pod_install": "cd ios && pod install",
+        "flutter_gen": "flutter pub run flutter_gen:flutter_gen_command",
+    }
+}

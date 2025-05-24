@@ -1,0 +1,31 @@
+{
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "bestly-app-68ad0",
+                    "appId": "1:245255967284:android:f261a8292bc821fddc3061",
+                    "fileOutput": "android/app/google-services.json"
+                }
+            },
+            "ios": {
+                "default": {
+                    "projectId": "bestly-app-68ad0",
+                    "appId": "1:245255967284:ios:bcdbe765eeefa3dddc3061",
+                    "uploadDebugSymbols": false,
+                    "fileOutput": "ios/Runner/GoogleService-Info.plist"
+                }
+            },
+            "dart": {
+                "lib/firebase_options.dart": {
+                    "projectId": "bestly-app-68ad0",
+                    "configurations": {
+                        "android": "1:245255967284:android:f261a8292bc821fddc3061",
+                        "ios": "1:245255967284:ios:bcdbe765eeefa3dddc3061",
+                        "web": "1:245255967284:web:a8d137485834eb0adc3061"
+                    }
+                }
+            }
+        }
+    }
+}
