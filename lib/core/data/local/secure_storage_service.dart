@@ -7,10 +7,17 @@ class SecureStorageService {
         encryptedSharedPreferences: true,
       );
 
+  static IOSOptions _getIOSOptions() => const IOSOptions(
+        accessibility: KeychainAccessibility.first_unlock,
+      );
+
   static late FlutterSecureStorage storage;
 
   static Future<void> init() async {
-    storage = FlutterSecureStorage(aOptions: _getAndroidOptions());
+    storage = FlutterSecureStorage(
+      aOptions: _getAndroidOptions(),
+      iOptions: _getIOSOptions(),
+    );
   }
 
   static Future<String?> getToken() async {

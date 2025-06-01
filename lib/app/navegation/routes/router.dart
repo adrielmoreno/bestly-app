@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../../features/auth/login_page.dart';
 import '../../../features/auth/view_model/auth_view_model.dart';
 import '../../../features/home/home_page.dart';
+import '../../../features/navigation/main_screen.dart';
 import '../../../features/splash/splash_page.dart';
 import '../../di/app_modules.dart';
 
@@ -21,6 +22,11 @@ class AppRouter {
 
       if (authStatus == AuthStatus.unAuthenticated) {
         return LoginPage.route;
+      } else if (authStatus == AuthStatus.authenticated) {
+        return MainScreen.route;
+      } else if (authStatus == AuthStatus.checking) {
+        // While checking authentication, stay on the splash page
+        return SplashPage.route;
       }
 
       return null;
@@ -37,6 +43,12 @@ class AppRouter {
         path: LoginPage.route,
         parentKey: _rootNavegationKey,
         page: const LoginPage(),
+      ),
+      // Main Home
+      _singleRoute(
+        path: MainScreen.route,
+        parentKey: _rootNavegationKey,
+        page: const MainScreen(),
       ),
       // Home
       _singleRoute(

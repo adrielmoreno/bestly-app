@@ -9,6 +9,7 @@ import 'sueño/sueno_navigation.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
+  static const String route = '/main';
 
   @override
   State<MainScreen> createState() => _MainScreenState();

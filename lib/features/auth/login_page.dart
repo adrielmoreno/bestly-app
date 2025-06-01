@@ -4,8 +4,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../app/di/app_modules.dart';
 import '../../core/presentation/common/widgets/inputs/custom_text_field.dart';
 import '../home/home_page.dart';
+import 'view_model/auth_view_model.dart';
 import 'widgets/branding_image.dart';
 
 class LoginPage extends StatefulWidget {
@@ -98,7 +100,12 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       MaterialButton(
                         minWidth: double.infinity,
-                        onPressed: () {},
+                        onPressed: () {
+                          inject<AuthViewModel>().login(
+                            email ?? '',
+                            password ?? '',
+                          );
+                        },
                         color: const Color(0xff00408b),
                         shape: RoundedRectangleBorder(
                             side: const BorderSide(

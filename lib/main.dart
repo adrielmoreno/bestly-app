@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'app/di/app_modules.dart';
 import 'app/my_app.dart';
+import 'core/data/local/secure_storage_service.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -10,6 +11,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await SecureStorageService.init();
   AppModules().setup();
   runApp(const MyApp());
 }

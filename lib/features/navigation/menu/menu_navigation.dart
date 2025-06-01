@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
-import '../../auth/login_page.dart';
+import '../../../app/di/app_modules.dart';
+import '../../auth/view_model/auth_view_model.dart';
 
 class MenuNavigation extends StatelessWidget {
   const MenuNavigation({super.key});
@@ -89,13 +89,9 @@ class MenuNavigation extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.logout),
             title: const Text('Cerrar sesión'),
-            onTap: () => FirebaseAuth.instance.signOut().then(
-              (value) {
-                GoogleSignIn().signOut();
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => const LoginPage()));
-              },
-            ),
+            onTap: () {
+              inject<AuthViewModel>().signOut();
+            },
           ),
         ],
       ),
